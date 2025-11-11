@@ -90,29 +90,23 @@
                     </div>
                     <div class="system-details">
                         <div class="detail-block">
-                            <h4>📂 핵심 기능</h4>
+                            <h4>데이터셋 등록 및 관리</h4>
                             <ul>
-                                <li><strong>다양한 형식 지원:</strong> SEM 이미지(PNG, JPG, TIFF), 어노테이션 데이터(JSON, CSV) 등 다양한 파일 형식 지원</li>
-                                <li><strong>효율적인 파일 관리:</strong> 드래그 앤 드롭으로 쉽게 업로드, 대량 파일 일괄 처리 가능</li>
-                                <li><strong>스마트 분류 시스템:</strong> Detection/Segmentation/Alignment 등 용도별 자동 분류</li>
-                                <li><strong>썸네일 미리보기:</strong> 실시간 썸네일 생성으로 빠른 이미지 브라우징</li>
-                                <li><strong>어노테이션 상태 추적:</strong> 각 파일의 어노테이션 완료 여부를 한눈에 확인</li>
+                                <li><strong>다중 데이터셋 관리:</strong> 여러 SEM 이미지 데이터셋을 독립적으로 관리</li>
+                                <li><strong>메타 데이터 관리:</strong> 데이터셋명, 설명, 생성일시, 파일 개수, Annotation 진행 상태 등의 정보를 저장, 관리</li>
+                                <li><strong>파일 형식 처리:</strong> PNG, JPG, TIFF 이미지 및 JSON, CSV 어노테이션 데이터 파싱</li>
+                                <li><strong>파일 업로드:</strong> 드래그 앤 드롭, 멀티 파일 동시 업로드 처리</li>
+                                <li><strong>자동 분류:</strong> 파일 메타데이터 기반 Detection/Segmentation/Alignment 태스크 타입 자동 분류</li>
+                                <li><strong>썸네일 생성:</strong> PIL 라이브러리를 이용해 300x300 썸네일 자동 생성 및 캐싱</li>
+                                <li><strong>검색 및 필터링:</strong> 데이터셋, 이미지 검색 및 필터링 조회</li>
+                                <li><strong>데이터셋 내보내기:</strong> 데이터셋, 이미지, Annotation 데이터 다운로드 (COCO Format)</li>
                             </ul>
                         </div>
                         <div class="detail-block">
-                            <h4>🗄️ 데이터 구조 관리</h4>
+                            <h4>데이터 처리</h4>
                             <ul>
-                                <li><strong>Train/Valid/Test 분할:</strong> 머신러닝 학습을 위한 데이터셋 자동 분할</li>
-                                <li><strong>클래스 정보 관리:</strong> 데이터셋별 독립적인 라벨/클래스 체계 구성</li>
-                                <li><strong>메타데이터 관리:</strong> 이미지 해상도, 생성일, 수정일 등 상세 정보 저장</li>
-                            </ul>
-                        </div>
-                        <div class="detail-block">
-                            <h4>📊 고급 기능</h4>
-                            <ul>
-                                <li><strong>일괄 내보내기:</strong> 선택한 파일들을 ZIP 형식으로 압축하여 다운로드</li>
-                                <li><strong>버전 관리:</strong> 데이터셋 버전 히스토리 추적</li>
-                                <li><strong>검색 및 필터링:</strong> 파일명, 타입, 어노테이션 상태 등으로 빠른 검색</li>
+                                <li><strong>데이터셋 분할:</strong> 8:1:1 비율의 Train/Valid/Test 자동 분할</li>
+                                <li><strong>클래스 관리:</strong> 데이터셋별 독립 라벨 체계 및 JSON Schema 기반 검증</li>
                             </ul>
                         </div>
                     </div>
@@ -131,34 +125,34 @@
                     </div>
                     <div class="system-details">
                         <div class="detail-block">
-                            <h4>🖌️ 다양한 어노테이션 도구</h4>
+                            <h4>어노테이션 도구 구현</h4>
                             <ul>
-                                <li><strong>Brush Tool:</strong> 자유롭게 그리며 픽셀 단위 정밀 마킹 - 브러시 크기 조절 가능, 실시간 미리보기</li>
-                                <li><strong>Polygon Tool:</strong> 클릭으로 점을 찍어 다각형 영역 지정 - 정밀한 경계선 표현, 점 추가/삭제 편집 기능</li>
-                                <li><strong>Bounding Box:</strong> 객체 탐지를 위한 사각형 영역 설정 - 빠른 라벨링 작업, 크기 및 위치 실시간 조정</li>
+                                <li><strong>Brush Tool:</strong> Canvas API 기반 픽셀 단위 마스킹, 동적 브러시 크기 조절</li>
+                                <li><strong>Polygon Tool:</strong> 다각형 그리기를 통해 영역 마스킹</li>
+                                <li><strong>Bounding Box:</strong> 박스 그리기를 통해 영역 마스킹 </li>
                             </ul>
                         </div>
                         <div class="detail-block">
-                            <h4>🤖 AI 지원 기능</h4>
+                            <h4>AI Assist</h4>
                             <ul>
-                                <li><strong>AI Assist:</strong> 학습된 모델을 활용한 자동 세그멘테이션 - 초기 어노테이션 자동 생성, 수동 보정으로 정확도 향상</li>
-                                <li><strong>Smart Selection:</strong> 유사한 패턴 자동 인식 및 선택</li>
+                                <li><strong>Auto-segmentation:</strong> 사전 학습된 UNet Segmentation 모델 활용한 자동 영역 마스킹</li>
+                                <li><strong>Pattern Matching:</strong> OpenCV 기반 유사 패턴 검출 및 영역 마스킹</li>
                             </ul>
                         </div>
                         <div class="detail-block">
-                            <h4>📊 실시간 분석</h4>
+                            <h4>실시간 분석</h4>
                             <ul>
-                                <li><strong>면적 계산:</strong> 선택 영역의 픽셀 수 및 실제 면적 자동 계산</li>
-                                <li><strong>통계 정보:</strong> 클래스별 객체 수, 전체 커버리지 비율 표시</li>
-                                <li><strong>어노테이션 디테일:</strong> 각 객체의 위치, 크기, confidence 점수 표시</li>
+                                <li><strong>면적 계산:</strong> 마스킹 영역 픽셀 수, 면적 등의 정보 출력</li>
+                                <li><strong>통계 처리:</strong> NumPy 기반 실시간 통계 계산 (객체 수, 커버리지 비율)</li>
+                                <li><strong>메타데이터:</strong> COCO 포맷 기반 어노테이션 정보 저장 및 관리</li>
                             </ul>
                         </div>
                         <div class="detail-block">
-                            <h4>⚡ 편의 기능</h4>
+                            <h4>UX 구현</h4>
                             <ul>
-                                <li><strong>Undo/Redo:</strong> 무제한 작업 히스토리 관리</li>
-                                <li><strong>줌 & 팬:</strong> 고해상도 이미지의 세밀한 작업 지원</li>
-                                <li><strong>단축키 지원:</strong> 빠른 도구 전환 및 작업 효율성 향상</li>
+                                <li><strong>히스토리 관리:</strong> Undo/Redo 스택 구현 (최대 20단계)</li>
+                                <li><strong>뷰어 컨트롤:</strong> 마우스 휠 줌, 드래그 팬 기능</li>
+                                <li><strong>키보드 단축키:</strong> 커스텀 훅을 통한 단축키 바인딩 시스템 </li>
                             </ul>
                         </div>
                     </div>
@@ -177,26 +171,22 @@
                     </div>
                     <div class="system-details">
                         <div class="detail-block">
-                            <h4>🎯 이미지 정렬 도구</h4>
+                            <h4>이미지 정렬 구현</h4>
                             <ul>
-                                <li><strong>듀얼 뷰어:</strong> 두 개의 SEM 이미지를 동시에 표시하여 비교 분석</li>
-                                <li><strong>대응점 매칭:</strong> 클릭으로 두 이미지의 대응점 지정 - 최소 3개 점으로 자동 정렬, 색상 구분으로 쉽게 식별</li>
+                                <li><strong>수동 정렬 도구:</strong> 사용자가 직접 이미지를 회전, 이동, 스케일 조정</li>
+                                <li><strong>대응점 매칭:</strong>  정렬 기준이 되는 3개의 대응점으로 자동 정렬</li>
                             </ul>
                         </div>
                         <div class="detail-block">
-                            <h4>🔄 변환 기능</h4>
+                            <h4>변환 알고리즘</h4>
                             <ul>
-                                <li><strong>실시간 변환:</strong> 회전, 이동, 크기 조절을 실시간으로 적용 - Shift키: 회전 모드, Ctrl키: 스케일 모드, 드래그: 이동 모드</li>
-                                <li><strong>투명도 조절:</strong> 오버레이 투명도 조정으로 정렬 정확도 확인</li>
-                                <li><strong>변환 행렬 계산:</strong> Affine/Perspective 변환 자동 계산</li>
+                                <li><strong>변환 행렬:</strong> Affine/Perspective 변환 계산</li>
                             </ul>
                         </div>
                         <div class="detail-block">
-                            <h4>✨ 애니메이션 효과</h4>
+                            <h4>UX 구현</h4>
                             <ul>
-                                <li><strong>부드러운 전환:</strong> 변환 적용 시 자연스러운 애니메이션</li>
-                                <li><strong>토글 뷰:</strong> 정렬 전후 비교를 위한 빠른 전환</li>
-                                <li><strong>히스토리 관리:</strong> 정렬 작업 이력 저장 및 복원</li>
+                                <li><strong>히스토리 관리:</strong> Undo/Redo 스택 구현 (최대 20단계)</li>
                             </ul>
                         </div>
                     </div>
@@ -215,37 +205,26 @@
                     </div>
                     <div class="system-details">
                         <div class="detail-block">
-                            <h4>🖥️ GPU 리소스 관리</h4>
+                            <h4>GPU 리소스 관리</h4>
                             <ul>
-                                <li><strong>실시간 모니터링:</strong> GPU 사용률, 메모리, 온도 실시간 표시</li>
-                                <li><strong>멀티 GPU 지원:</strong> 여러 GPU 중 선택하여 학습 진행</li>
-                                <li><strong>자동 최적화:</strong> GPU 메모리에 맞춰 배치 크기 자동 조정</li>
+                                <li><strong>GPU 모니터링:</strong> GPU 사용률, VRAM, 온도 실시간 출력</li>
+                                <li><strong>멀티 GPU:</strong> CUDA device 자동 감지 및 선택</li>
                             </ul>
                         </div>
                         <div class="detail-block">
-                            <h4>⚙️ 학습 설정</h4>
+                            <h4>학습</h4>
                             <ul>
-                                <li><strong>하이퍼파라미터 튜닝:</strong> Epoch 수, 학습률(Learning Rate), Batch Size, Optimizer 선택, Loss Function 설정</li>
-                                <li><strong>데이터 증강:</strong> 회전, 플립, 노이즈 추가 등 자동 증강</li>
-                                <li><strong>모델 아키텍처:</strong> U-Net, Mask R-CNN 등 다양한 모델 지원</li>
+                                <li><strong>하이퍼파라미터:</strong> YAML 기반 설정 파일로 Epoch, Learning Rate, Batch Size 조정</li>
+                                <li><strong>학습 모니터링:</strong> SSE (Server-Sent Events)를 통한 실시간 진행 상황 스트리밍 (Loss, Accuracy 등)</li>
                             </ul>
                         </div>
                         <div class="detail-block">
-                            <h4>📈 학습 진행 관리</h4>
+                            <h4>Segmentation 추론</h4>
                             <ul>
-                                <li><strong>실시간 로그:</strong> 학습 진행 상황 실시간 스트리밍</li>
-                                <li><strong>성능 지표 시각화:</strong> Loss, Accuracy, IoU 등 차트로 표시</li>
-                                <li><strong>체크포인트 저장:</strong> 주기적 모델 저장 및 베스트 모델 자동 선택</li>
-                                <li><strong>조기 종료:</strong> 성능 향상이 없을 시 자동 학습 중단</li>
-                            </ul>
-                        </div>
-                        <div class="detail-block">
-                            <h4>🚀 모델 추론</h4>
-                            <ul>
-                                <li><strong>모델 관리:</strong> 체크포인트 선택, 모델 정보 표시 (학습 데이터셋, 성능 지표, 파라미터 수)</li>
-                                <li><strong>배치 추론:</strong> 대량 이미지 처리, 진행률 표시, GPU를 활용한 병렬 처리</li>
-                                <li><strong>결과 시각화:</strong> 오버레이 뷰, 사이드 바이 사이드 비교, 투명도 조절, 다양한 컬러맵</li>
-                                <li><strong>결과 활용:</strong> 어노테이션 자동 변환, 통계 분석, PNG/JSON/CSV 내보내기</li>
+                                <li><strong>모델 관리:</strong> 저장된 여러 버전 중 원하는 모델 로드, 모델 정보 표시</li>
+                                <li><strong>배치 추론:</strong>  폴더 단위로 여러 이미지 일괄 처리</li>
+                                <li><strong>결과 시각화:</strong> 원본 이미지 위에 세그멘테이션 결과 반투명 표시, 원본 비교, 투명도 조절 등등</li>
+                                <li><strong>결과 활용:</strong> 추론 결과를 어노테이션 데이터로 자동 변환, 다양한 포맷 내보내기 등</li>
                             </ul>
                         </div>
                     </div>
