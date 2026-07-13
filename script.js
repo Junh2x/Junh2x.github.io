@@ -2,11 +2,9 @@
   'use strict';
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  /* ── 히어로 등장 ── */
   var hero = document.querySelector('.hero');
   if (hero) requestAnimationFrame(function () { requestAnimationFrame(function () { hero.classList.add('in'); }); });
 
-  /* ── 스크롤 리빌 ── */
   var rv = Array.prototype.slice.call(document.querySelectorAll('.rv'));
   if (reduce || !('IntersectionObserver' in window)) {
     rv.forEach(function (el) { el.classList.add('in'); });
@@ -17,7 +15,6 @@
     rv.forEach(function (el) { io.observe(el); });
   }
 
-  /* ── 접기·펼치기 ── */
   document.querySelectorAll('.more').forEach(function (btn) {
     var entry = btn.closest('.entry'); var fold = entry && entry.querySelector('.fold'); var label = btn.querySelector('.more-t');
     if (!fold) return;
@@ -28,7 +25,6 @@
     });
   });
 
-  /* ── 이메일 복사 ── */
   var timer;
   document.querySelectorAll('[data-copy]').forEach(function (btn) {
     var lbl = btn.querySelector('.c-copy-t');
@@ -50,10 +46,8 @@
     document.body.appendChild(ta); ta.select(); try { document.execCommand('copy'); done(); } catch (e) {} document.body.removeChild(ta);
   }
 
-  /* ── 진행바 · 우측 레일 · 맨 위로 ── */
   var bar = document.getElementById('progressBar');
   var toTop = document.getElementById('toTop');
-  var aura = document.querySelector('.bg-aura');
   var railDots = {};
   document.querySelectorAll('.rail-dot').forEach(function (a) { railDots[a.getAttribute('href').slice(1)] = a; });
   var railTargets = Object.keys(railDots).map(function (id) { return { id: id, el: document.getElementById(id) }; }).filter(function (t) { return t.el; });
@@ -63,7 +57,6 @@
     var sy = window.scrollY, dh = document.documentElement.scrollHeight - window.innerHeight;
     var pct = dh > 0 ? sy / dh * 100 : 0;
     if (bar) bar.style.width = pct + '%';
-    if (aura) aura.style.transform = 'translate3d(0,' + (sy * -0.05).toFixed(1) + 'px,0)';
     if (toTop) toTop.classList.toggle('show', sy > window.innerHeight * 0.6);
 
     var line = sy + window.innerHeight * 0.32;

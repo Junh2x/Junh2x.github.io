@@ -12,15 +12,13 @@
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg?v=19">
   <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css">
-  <link rel="stylesheet" href="styles.css?v=37">
+  <link rel="stylesheet" href="styles.css?v=44">
 </head>
 <body>
 
-  <!-- 페이지 배경 (그라데이션) -->
   <div class="bg-aura" aria-hidden="true"></div>
   <div class="progress" aria-hidden="true"><span id="progressBar"></span></div>
 
-  <!-- 우측 스크롤 네비 -->
   <nav class="rail" aria-label="섹션 이동">
     <a class="rail-dot" href="#top"><span class="rail-lbl">Intro</span><span class="rail-mk"></span></a>
     <a class="rail-dot" href="#experience"><span class="rail-lbl">Experience</span><span class="rail-mk"></span></a>
@@ -35,7 +33,6 @@
 
   <main>
 
-    <!-- ═══ 히어로 ═══ -->
     <section class="hero" id="top">
       <div class="hero-in">
         <p class="hero-eyebrow reveal">SOFTWARE DEVELOPER</p>
@@ -48,7 +45,6 @@
       </div>
     </section>
 
-    <!-- ═══ 경험 (연도별) ═══ -->
     <section class="sec" id="experience">
       <p class="sec-kicker rv">01</p>
       <h2 class="sec-title rv">EXPERIENCE</h2>
@@ -126,32 +122,82 @@
       </div>
     </section>
 
-    <!-- ═══ 기술 ═══ -->
     <section class="sec" id="skills">
       <p class="sec-kicker rv">02</p>
       <h2 class="sec-title rv">SKILLS</h2>
-      <div class="stack rv">
-        <div class="tech"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="" loading="lazy" onerror="this.parentNode.remove()"><span>Python</span></div>
-        <div class="tech"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" alt="" loading="lazy" onerror="this.parentNode.remove()"><span>TypeScript</span></div>
-        <div class="tech"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="" loading="lazy" onerror="this.parentNode.remove()"><span>JavaScript</span></div>
-        <div class="tech"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="" loading="lazy" onerror="this.parentNode.remove()"><span>Java</span></div>
-        <div class="tech"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" alt="" loading="lazy" onerror="this.parentNode.remove()"><span>C++</span></div>
-        <div class="tech"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="" loading="lazy" onerror="this.parentNode.remove()"><span>React</span></div>
-        <div class="tech"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/electron/electron-original.svg" alt="" loading="lazy" onerror="this.parentNode.remove()"><span>Electron</span></div>
-        <div class="tech"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="" loading="lazy" onerror="this.parentNode.remove()"><span>Node.js</span></div>
-        <div class="tech"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg" alt="" loading="lazy" onerror="this.parentNode.remove()"><span>FastAPI</span></div>
-        <div class="tech"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg" alt="" loading="lazy" onerror="this.parentNode.remove()"><span>Spring</span></div>
-        <div class="tech"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg" alt="" loading="lazy" onerror="this.parentNode.remove()"><span>PyTorch</span></div>
-        <div class="tech"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/opencv/opencv-original.svg" alt="" loading="lazy" onerror="this.parentNode.remove()"><span>OpenCV</span></div>
-        <div class="tech"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="" loading="lazy" onerror="this.parentNode.remove()"><span>MySQL</span></div>
-        <div class="tech"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sqlite/sqlite-original.svg" alt="" loading="lazy" onerror="this.parentNode.remove()"><span>SQLite</span></div>
-        <div class="tech"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" alt="" loading="lazy" onerror="this.parentNode.remove()"><span>AWS</span></div>
-        <div class="tech"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg" alt="" loading="lazy" onerror="this.parentNode.remove()"><span>Firebase</span></div>
-        <div class="tech"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="" loading="lazy" onerror="this.parentNode.remove()"><span>Git</span></div>
+      <div class="skills">
+
+        <div class="skill-row rv">
+          <div class="skill-cat">
+            <span class="skill-ic"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 6-6 6 6 6"/><path d="m16 6 6 6-6 6"/><path d="m13.5 4-3 16"/></svg></span>
+            <h3 class="skill-cat-name">Languages</h3>
+          </div>
+          <ul class="skill-pills">
+            <li class="pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="" loading="lazy" onerror="this.remove()"><span>Python</span></li>
+            <li class="pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" alt="" loading="lazy" onerror="this.remove()"><span>TypeScript</span></li>
+            <li class="pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="" loading="lazy" onerror="this.remove()"><span>JavaScript</span></li>
+            <li class="pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="" loading="lazy" onerror="this.remove()"><span>Java</span></li>
+            <li class="pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" alt="" loading="lazy" onerror="this.remove()"><span>C++</span></li>
+            <li class="pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg" alt="" loading="lazy" onerror="this.remove()"><span>C#</span></li>
+          </ul>
+        </div>
+
+        <div class="skill-row rv">
+          <div class="skill-cat">
+            <span class="skill-ic"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="3.5" width="19" height="13" rx="2.5"/><path d="M8.5 21h7"/><path d="M12 16.5V21"/></svg></span>
+            <h3 class="skill-cat-name">Frontend &amp; Desktop</h3>
+          </div>
+          <ul class="skill-pills">
+            <li class="pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="" loading="lazy" onerror="this.remove()"><span>React</span></li>
+            <li class="pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/electron/electron-original.svg" alt="" loading="lazy" onerror="this.remove()"><span>Electron</span></li>
+            <li class="pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/qt/qt-original.svg" alt="" loading="lazy" onerror="this.remove()"><span>PyQt</span></li>
+            <li class="pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dot-net/dot-net-original.svg" alt="" loading="lazy" onerror="this.remove()"><span>WPF</span></li>
+          </ul>
+        </div>
+
+        <div class="skill-row rv">
+          <div class="skill-cat">
+            <span class="skill-ic"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="12" cy="5.5" rx="7.5" ry="2.8"/><path d="M4.5 5.5v6c0 1.55 3.36 2.8 7.5 2.8s7.5-1.25 7.5-2.8v-6"/><path d="M4.5 11.5v6c0 1.55 3.36 2.8 7.5 2.8s7.5-1.25 7.5-2.8v-6"/></svg></span>
+            <h3 class="skill-cat-name">Backend &amp; Database</h3>
+          </div>
+          <ul class="skill-pills">
+            <li class="pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="" loading="lazy" onerror="this.remove()"><span>Node.js</span></li>
+            <li class="pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" alt="" loading="lazy" onerror="this.remove()"><span>Express.js</span></li>
+            <li class="pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg" alt="" loading="lazy" onerror="this.remove()"><span>FastAPI</span></li>
+            <li class="pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg" alt="" loading="lazy" onerror="this.remove()"><span>Spring</span></li>
+            <li class="pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="" loading="lazy" onerror="this.remove()"><span>MySQL</span></li>
+            <li class="pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sqlite/sqlite-original.svg" alt="" loading="lazy" onerror="this.remove()"><span>SQLite</span></li>
+          </ul>
+        </div>
+
+        <div class="skill-row rv">
+          <div class="skill-cat">
+            <span class="skill-ic"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6.5" y="6.5" width="11" height="11" rx="2"/><rect x="10" y="10" width="4" height="4" rx=".5"/><path d="M9.5 3v3M14.5 3v3M9.5 18v3M14.5 18v3M3 9.5h3M3 14.5h3M18 9.5h3M18 14.5h3"/></svg></span>
+            <h3 class="skill-cat-name">AI / ML</h3>
+          </div>
+          <ul class="skill-pills">
+            <li class="pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg" alt="" loading="lazy" onerror="this.remove()"><span>PyTorch</span></li>
+            <li class="pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/opencv/opencv-original.svg" alt="" loading="lazy" onerror="this.remove()"><span>OpenCV</span></li>
+            <li class="pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg" alt="" loading="lazy" onerror="this.remove()"><span>Pandas</span></li>
+            <li class="pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg" alt="" loading="lazy" onerror="this.remove()"><span>NumPy</span></li>
+          </ul>
+        </div>
+
+        <div class="skill-row rv">
+          <div class="skill-cat">
+            <span class="skill-ic"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/></svg></span>
+            <h3 class="skill-cat-name">DevOps &amp; Cloud</h3>
+          </div>
+          <ul class="skill-pills">
+            <li class="pill"><img class="pill-wide" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" alt="" loading="lazy" onerror="this.remove()"><span>AWS</span></li>
+            <li class="pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg" alt="" loading="lazy" onerror="this.remove()"><span>Firebase</span></li>
+            <li class="pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="" loading="lazy" onerror="this.remove()"><span>Git</span></li>
+          </ul>
+        </div>
+
       </div>
     </section>
 
-    <!-- ═══ 학력 ═══ -->
     <section class="sec" id="education">
       <p class="sec-kicker rv">03</p>
       <h2 class="sec-title rv">EDUCATION</h2>
@@ -161,7 +207,6 @@
       </div>
     </section>
 
-    <!-- ═══ 수상 ═══ -->
     <section class="sec" id="awards">
       <p class="sec-kicker rv">04</p>
       <h2 class="sec-title rv">AWARDS</h2>
@@ -170,7 +215,6 @@
       </div>
     </section>
 
-    <!-- ═══ 자격 ═══ -->
     <section class="sec" id="certs">
       <p class="sec-kicker rv">05</p>
       <h2 class="sec-title rv">CERTIFICATES</h2>
@@ -180,7 +224,6 @@
       </div>
     </section>
 
-    <!-- ═══ 연락처 ═══ -->
     <section class="sec contact" id="contact">
       <p class="sec-kicker rv">06</p>
       <h2 class="sec-title rv">CONTACT</h2>
@@ -207,6 +250,6 @@
     <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
   </button>
 
-  <script src="script.js?v=28" defer></script>
+  <script src="script.js?v=29" defer></script>
 </body>
 </html>

@@ -1,8 +1,3 @@
-/* ============================================================
-   이준희 · Software Developer
-   흰 바탕 + 그라데이션 · 좌측 정렬 · Pretendard
-   ============================================================ */
-
 :root {
   --bg:      #fbfbfa;
   --head:    #201f24;
@@ -46,22 +41,21 @@ a:hover { background-size: 100% 1.5px; }
 .skip { position: absolute; left: -999px; top: 0; background: var(--head); color: #fff; padding: .6rem 1rem; z-index: 90; background-image: none; }
 .skip:focus { left: 0; }
 
-/* ── 배경: 그라데이션 (고정 크기 + 스크롤 시차 — 성능 우선) ── */
-.bg-aura { position: fixed; inset: -12%; z-index: -2; pointer-events: none; will-change: transform;
+.bg-aura { position: fixed; inset: -12%; z-index: -2; pointer-events: none; transform: translateZ(0);
   background:
-    radial-gradient(38vw 38vw at 86% 8%,  rgba(255, 150, 195, .42), transparent 56%),
-    radial-gradient(36vw 36vw at 8% 22%,  rgba(150, 228, 190, .34), transparent 56%),
-    radial-gradient(40vw 40vw at 92% 54%, rgba(168, 184, 255, .40), transparent 56%),
-    radial-gradient(34vw 34vw at 14% 82%, rgba(255, 205, 158, .34), transparent 56%),
-    radial-gradient(36vw 36vw at 88% 94%, rgba(255, 168, 214, .36), transparent 56%);
+    radial-gradient(42vw 42vw at 85% 6%,  rgba(255, 140, 190, .52), transparent 60%),
+    radial-gradient(40vw 40vw at 6% 20%,  rgba(140, 226, 186, .44), transparent 60%),
+    radial-gradient(44vw 44vw at 94% 52%, rgba(158, 176, 255, .52), transparent 60%),
+    radial-gradient(38vw 38vw at 10% 80%, rgba(255, 200, 150, .46), transparent 60%),
+    radial-gradient(40vw 40vw at 90% 96%, rgba(255, 158, 208, .48), transparent 60%),
+    radial-gradient(62vw 52vw at 44% 34%, rgba(188, 192, 255, .22), transparent 70%),
+    radial-gradient(58vw 48vw at 62% 74%, rgba(255, 188, 214, .20), transparent 70%);
 }
 
-/* 진행바 */
 .progress { position: fixed; top: 0; left: 0; right: 0; height: 3px; z-index: 60; pointer-events: none; }
 .progress span { display: block; height: 100%; width: 0;
   background: linear-gradient(90deg, #ffabce, #b9a9ff, #a9d9ff); transition: width .1s linear; }
 
-/* ── 우측 스크롤 네비 (라벨 인덱스 + 그라데이션 마커) ── */
 .rail { position: fixed; right: clamp(2rem, 4.5vw, 4.5rem); top: 50%; transform: translateY(-50%); z-index: 45;
   display: flex; flex-direction: column; align-items: flex-end; gap: .25rem; }
 .rail-dot { display: flex; align-items: center; justify-content: flex-end; gap: .8rem; padding: .36rem 0; background-image: none; }
@@ -74,7 +68,6 @@ a:hover { background-size: 100% 1.5px; }
 .rail-dot.active .rail-lbl { color: var(--head); font-weight: 700; transform: translateX(-3px); }
 .rail-dot.active .rail-mk { width: 44px; background: linear-gradient(90deg, #ff9ec4, #6a5af5); }
 
-/* ============ 히어로 ============ */
 .hero { min-height: 90vh; display: flex; align-items: center;
   padding: 6rem clamp(1.4rem, 5vw, 4rem) 4rem; }
 .hero-in { width: 100%; max-width: 1000px; margin: 0 auto; }
@@ -112,12 +105,10 @@ a:hover { background-size: 100% 1.5px; }
 .hero.in .reveal:nth-child(4) { transition-delay: .4s; }
 .hero.in .reveal:nth-child(5) { transition-delay: .54s; }
 
-/* ============ 섹션 ============ */
 .sec { max-width: 1000px; margin: 0 auto; padding: 5rem clamp(1.4rem, 5vw, 4rem); }
 .sec-kicker { font-size: .82rem; font-weight: 700; letter-spacing: .16em; color: var(--accent); margin: 0 0 .55rem; }
 .sec-title { font-size: clamp(2.6rem, 6vw, 4rem); font-weight: 800; color: var(--head); letter-spacing: -0.025em; line-height: 1; margin: 0 0 3rem; }
 
-/* ============ EXPERIENCE (연도별) ============ */
 .years { display: flex; flex-direction: column; gap: 3.8rem; }
 .year-group { display: grid; grid-template-columns: 116px 1fr; gap: 0 2.6rem; }
 .year-label { font-size: clamp(1.9rem, 4vw, 2.8rem); font-weight: 800; color: var(--faint); letter-spacing: -0.03em; line-height: 1;
@@ -148,23 +139,45 @@ a:hover { background-size: 100% 1.5px; }
 .more .chev { transition: transform .34s var(--ease); }
 .more[aria-expanded="true"] .chev { transform: rotate(180deg); }
 
-/* ============ SKILLS ============ */
-.stack { display: flex; flex-wrap: wrap; gap: .8rem; }
-.tech { display: flex; flex-direction: column; align-items: center; gap: .6rem; width: 92px; padding: 1.05rem .5rem .9rem; border-radius: 16px;
-  transition: transform .32s var(--spring), background-color .32s; }
-.tech img { width: 42px; height: 42px; object-fit: contain; filter: saturate(.95); transition: transform .32s var(--spring), filter .32s; }
-.tech span { font-size: .78rem; font-weight: 500; color: var(--body); }
-.tech:hover { transform: translateY(-8px); }
-.tech:hover img { transform: scale(1.16) rotate(-6deg); filter: saturate(1.12); }
-.tech:hover span { color: var(--head); }
+.skills { display: flex; flex-direction: column; }
+.skill-row { display: grid; grid-template-columns: minmax(168px, 210px) 1fr; align-items: center; gap: 1rem 2rem; }
+.skill-row + .skill-row { margin-top: 1.8rem; padding-top: 1.8rem; border-top: 1px solid var(--line); }
+/* .skills 접두사로 특이성을 높여 뒤쪽 .rv transition 규칙을 이김 (등장 stagger 유지) */
+.skills .skill-row { transition: opacity .7s var(--ease), transform .7s var(--ease); }
+.skills .skill-row:nth-child(2) { transition-delay: .07s; }
+.skills .skill-row:nth-child(3) { transition-delay: .14s; }
+.skills .skill-row:nth-child(4) { transition-delay: .21s; }
+.skills .skill-row:nth-child(5) { transition-delay: .28s; }
 
-/* ============ 기록 (구분선) ============ */
+.skill-cat { display: flex; align-items: center; gap: .7rem; }
+.skill-ic { flex: none; display: grid; place-items: center; color: var(--accent); }
+.skill-ic svg { width: 24px; height: 24px; }
+.skill-cat-name { margin: 0; font-size: 1.12rem; font-weight: 750; color: var(--head); letter-spacing: -0.02em; line-height: 1.22; }
+
+.skill-pills { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: .6rem; }
+.pill { position: relative; display: inline-flex; align-items: center; gap: .5rem; padding: .5rem .95rem; border-radius: 999px;
+  color: var(--ink); font-size: .875rem; font-weight: 600; letter-spacing: -0.01em; white-space: nowrap;
+  background: linear-gradient(140deg, rgba(255, 255, 255, .5), rgba(255, 255, 255, .2));
+  box-shadow: 0 4px 14px rgba(30, 26, 60, .07), inset 0 -2px 4px rgba(120, 110, 200, .04);
+  transition: transform .28s var(--spring), box-shadow .3s var(--ease), background .3s var(--ease); }
+/* 좌상단·우하단 두 모서리에만 얇게 흰빛이 드는 유리 테두리 (gradient border + mask) */
+.pill::before { content: ""; position: absolute; inset: 0; border-radius: inherit; padding: 1px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, .95), rgba(255, 255, 255, 0) 34%, rgba(255, 255, 255, 0) 66%, rgba(255, 255, 255, .82));
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor; mask-composite: exclude; pointer-events: none; }
+.pill img { width: 18px; height: 18px; object-fit: contain; flex: none; }
+.pill img.pill-wide { width: auto; height: 13px; }
+.pill:hover { transform: translateY(-2px);
+  background: linear-gradient(140deg, rgba(255, 255, 255, .68), rgba(255, 255, 255, .32));
+  box-shadow: 0 8px 20px rgba(30, 26, 60, .12), inset 0 -2px 5px rgba(120, 110, 200, .06); }
+.pill:hover::before { background: linear-gradient(135deg, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0) 34%, rgba(255, 255, 255, 0) 66%, rgba(255, 255, 255, .9)); }
+
 .recs { display: flex; flex-direction: column; }
 .rec + .rec { margin-top: 1.9rem; padding-top: 1.9rem; border-top: 1px solid var(--line); }
 .rec-name { font-size: clamp(1.25rem, 2.6vw, 1.5rem); font-weight: 800; color: var(--head); margin: 0; letter-spacing: -0.025em; line-height: 1.25; }
 .rec-meta { font-size: .92rem; color: var(--muted); margin: .38rem 0 0; }
 
-/* ============ CONTACT ============ */
 .c-lead { font-size: clamp(1.15rem, 2vw, 1.45rem); color: var(--ink); margin: 0 0 .5rem; max-width: 40ch; line-height: 1.5; }
 .c-lead2 { font-size: clamp(1rem, 1.6vw, 1.15rem); color: var(--muted); margin: 0 0 2rem; line-height: 1.5; }
 .c-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem; }
@@ -192,7 +205,6 @@ a:hover { background-size: 100% 1.5px; }
 .c-git:hover { border-color: var(--head); background: rgba(255, 255, 255, .85); transform: translateY(-2px); box-shadow: 0 8px 20px rgba(20, 20, 26, .1); }
 .c-git:active { transform: translateY(0); box-shadow: none; }
 
-/* ============ 푸터 · 맨 위로 ============ */
 .foot { max-width: 1000px; margin: 2rem auto 0; padding: 2rem clamp(1.4rem, 5vw, 4rem) 3.5rem;
   background: transparent; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 1rem; }
 .foot p { margin: 0; font-size: .82rem; color: var(--muted); }
@@ -202,11 +214,9 @@ a:hover { background-size: 100% 1.5px; }
   opacity: 0; transform: translateY(12px); pointer-events: none; transition: opacity .3s, transform .3s var(--spring); }
 .totop.show { opacity: 1; transform: none; pointer-events: auto; }
 
-/* ============ 리빌 ============ */
 .rv { opacity: 0; transform: scale(.99); transition: opacity .7s var(--ease), transform .7s var(--ease); }
 .rv.in { opacity: 1; transform: none; }
 
-/* ============ 반응형 ============ */
 @media (max-width: 960px) { .rail { display: none; } }
 @media (max-width: 700px) {
   .hero { min-height: 84vh; }
@@ -214,8 +224,10 @@ a:hover { background-size: 100% 1.5px; }
   .year-group { grid-template-columns: 1fr; gap: .8rem 0; }
   .year-label { position: static; }
   .entry-head { flex-direction: column; gap: .12rem; }
-  .tech { width: calc(33.33% - .6rem); }
-  /* 연락처 버튼 컴팩트화 (모바일) */
+  .skill-row { grid-template-columns: 1fr; gap: .8rem; }
+  .skill-row + .skill-row { margin-top: 1.4rem; padding-top: 1.4rem; }
+  .skill-cat-name { font-size: 1.06rem; }
+  .skill-pills { gap: .5rem; }
   .c-actions { gap: .7rem; }
   .c-mail { padding: .32rem .42rem .32rem 1rem; gap: .25rem; }
   .c-mail-addr { font-size: .88rem; }
@@ -223,16 +235,14 @@ a:hover { background-size: 100% 1.5px; }
   .c-git { padding: .5rem 1.2rem; font-size: .88rem; }
 }
 
-/* ============ 모션 최소화 ============ */
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .rv, .hero .reveal { opacity: 1; transform: none; }
   .hero-scroll span { animation: none; }
-  .fold, a, .more, .tech, .tech img, .c-btn, .totop { transition: none; }
+  .fold, a, .more, .pill, .skill-row, .skill-ic, .c-btn, .totop { transition: none; }
   * { animation-duration: .001ms !important; }
 }
 
-/* ============ 인쇄 ============ */
 @media print {
   .bg-aura, .progress, .totop, .more, .skip { display: none; }
   .rv, .hero .reveal { opacity: 1; transform: none; }
